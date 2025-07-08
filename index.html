@@ -32,12 +32,18 @@
       border-color: rgb(0,0,0)
     }
 
-    .project-card {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(230, 200, 190, 0.1);
-      border-color: rgb(0,0,0)
+      .project-card {
+          background: white;
+    padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(230, 200, 190, 0.1);
+  border: 1px solid rgb(0, 0, 0); /* add visible border */
+  width: 100%; /* forces full width of grid cell */
+  box-sizing: border-box; /* includes padding in width */
+  display: flex;
+  flex-direction: column;
+    justify-content: space-between;
+}
     }
 
     .project-title {
@@ -103,7 +109,9 @@ Label('cholar', 206,206, fill='white', font='arial')
     <div class="project-card">
       <h3 class="project-title">Project 2</h3>
       <p class="project-description">Description of your second project.</p>
-      <iframe src="https://example.com/embed/project2"></iframe>
+      <iframe width="410" height="460"
+   src="https://academy.cs.cmu.edu/sharing/midnightBlueFly830313/embed"> 
+ </iframe>
     </div>
 
     <!-- Row 2 -->
