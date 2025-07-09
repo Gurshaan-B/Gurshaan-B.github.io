@@ -25,25 +25,23 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      grid-template-columns: 1fr; /* Single column */
       gap: 20px;
-      max-width: 1000px;
+      max-width: 800px;
       margin: 0 auto;
-      border-color: rgb(0,0,0)
     }
 
-      .project-card {
-          background: white;
-    padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(230, 200, 190, 0.1);
-  border: 1px solid rgb(0, 0, 0); /* add visible border */
-  width: 100%; /* forces full width of grid cell */
-  box-sizing: border-box; /* includes padding in width */
-  display: flex;
-  flex-direction: column;
-    justify-content: space-between;
-}
+    .project-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(230, 200, 190, 0.1);
+      border: 1px solid rgb(0, 0, 0);
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .project-title {
@@ -63,6 +61,14 @@
       border-radius: 6px;
     }
 
+    pre {
+      background-color: #f8f8f8;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+
     @media (max-width: 700px) {
       .projects-grid {
         grid-template-columns: 1fr;
@@ -74,66 +80,75 @@
 <body>
   <header>
     <h1>Gurshaan's Portfolio</h1>
-    <h2>Brief ,Notable, Influential</h2>
+    <h2>Brief, Notable, Influential</h2>
   </header>
 
   <div class="intro">
-    <p>I am a 15 year old rising sophmore who has been coding for fun since late elementary school. I have always had my dad who taught me
-      and even though I have had numerous long breaks, I still have memories from doing it. I am glad to be back at it and here will be my
-      projects. </p>
+    <p>I am a 15-year-old rising sophomore who has been coding for fun since late elementary school. My dad taught me, and even though I’ve taken long breaks, I’ve always come back to it. Here are some of my projects!</p>
   </div>
 
   <section class="projects-grid">
-    <!-- Row 1 -->
+    <!-- Project 1 -->
     <div class="project-card">
       <h3 class="project-title">Global Goals Splashscreen</h3>
-      <p class="project-description">These are drawings that represent the 4 global goals that I believe are the most important out of the 17. 
-        There are 4 squares which contain symbols that represent the 4 global goals that we drew with our logo in the middle. 
-      Concepts I learned from this are how to create shapes, how to fill in color, and why order matters.</p>
+      <p class="project-description">These drawings represent four global goals I believe are most important out of the 17. The squares each represent a goal, and the logo is centered. I learned shape creation, layering, and color fills.</p>
       <iframe src="https://academy.cs.cmu.edu/sharing/ivoryFly916554/embed"></iframe>
-    
-<pre><code>
+      <pre><code>
 Polygon(263,346,300,315,330,340,326,354,310,360,287,359,263,346,fill=None,border='white',borderWidth=8)
-Star(200,200,35,15, fill=gradient('orangeRed', 'orange','yellow', start='top'),opacity=80, roundness=80)
-Label(' Peace, justice, ',300,230,font='cinzel',fill=rgb(5,25,5),size=15, bold=True)
-Label('and Strong Institutions',300,250,font='cinzel',fill=rgb(5,25,5),size=13, bold=True)
+Star(200,200,35,15, fill=gradient('orangeRed','orange','yellow',start='top'),opacity=80,roundness=80)
+Label(' Peace, justice, ',300,230,font='cinzel',fill=rgb(5,25,5),size=15,bold=True)
+Label('and Strong Institutions',300,250,font='cinzel',fill=rgb(5,25,5),size=13,bold=True)
 Label('Quality Education',100,240,font='cursive',size=30)
 Circle(200,200,26, fill='darkCyan')
 Label('G',186,192, fill='white', bold=True, font='arial')
-Label('lobal', 204,192, fill='white', font='arial')
+Label('lobal',204,192, fill='white', font='arial')
 Label('S',185,206, fill='white', bold=True, font='arial')
-Label('cholar', 206,206, fill='white', font='arial')
-</code></pre>
-    </div>
-    <!-- Row 2 -->
-    <div class="project-card">
-      <h3 class="project-title">Project 2</h3>
-      <p class="project-description">Description of your second project.</p>
-      <iframe width="410" height="460"
-   src="https://academy.cs.cmu.edu/sharing/midnightBlueFly830313/embed"> 
- </iframe>
+Label('cholar',206,206, fill='white', font='arial')
+      </code></pre>
     </div>
 
-    <!-- Row 3 -->
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3 class="project-title">Project 2</h3>
+      <p class="project-description">This is another visual project I worked on.</p>
+      <iframe src="https://academy.cs.cmu.edu/sharing/midnightBlueFly830313/embed"></iframe>
+      <pre><code>
+Rect(0,0,400,400,fill='skyBlue')
+Rect(0,300,400,100,fill='lightGreen')
+sun = Star(120,150,20,9,roundness=90, fill='yellow')
+sunback = Star(120,150,30,9,roundness=10, fill='yellow')
+def drawLogoA(x,y,radius):
+  sun.centerX = x
+  sun.centerY = y
+  sun.radius = radius
+  sunback.centerX = x
+  sunback.centerY = y
+  sunback.radius = (radius * 3)/2
+      </code></pre>
+    </div>
+
+    <!-- Project 3 -->
     <div class="project-card">
       <h3 class="project-title">Project 3</h3>
       <p class="project-description">Description of your third project.</p>
       <iframe src="https://example.com/embed/project3"></iframe>
     </div>
-    <!-- Row 4 -->
+
+    <!-- Project 4 -->
     <div class="project-card">
       <h3 class="project-title">Project 4</h3>
       <p class="project-description">Description of your fourth project.</p>
       <iframe src="https://example.com/embed/project4"></iframe>
     </div>
 
-    <!-- Row 5 -->
+    <!-- Project 5 -->
     <div class="project-card">
       <h3 class="project-title">Project 5</h3>
       <p class="project-description">Description of your fifth project.</p>
       <iframe src="https://example.com/embed/project5"></iframe>
     </div>
-    <!-- Row 6 -->
+
+    <!-- Project 6 -->
     <div class="project-card">
       <h3 class="project-title">Project 6</h3>
       <p class="project-description">Description of your sixth project.</p>
@@ -142,4 +157,3 @@ Label('cholar', 206,206, fill='white', font='arial')
   </section>
 </body>
 </html>
-
