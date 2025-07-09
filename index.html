@@ -94,6 +94,7 @@
       <p class="project-description">These drawings represent four global goals I believe are most important out of the 17. The squares each represent a goal, and the logo is centered. I learned shape creation, layering, and color fills.</p>
       <iframe src="https://academy.cs.cmu.edu/sharing/ivoryFly916554/embed"></iframe>
       <pre><code>
+        
 Polygon(263,346,300,315,330,340,326,354,310,360,287,359,263,346,fill=None,border='white',borderWidth=8)
 Star(200,200,35,15, fill=gradient('orangeRed','orange','yellow',start='top'),opacity=80,roundness=80)
 Label(' Peace, justice, ',300,230,font='cinzel',fill=rgb(5,25,5),size=15,bold=True)
@@ -115,6 +116,10 @@ Label('cholar',206,206, fill='white', font='arial')
         But the code is good. Conecpts we learned were how to use functions and variables, and how to change properties.</p>
       <iframe src="https://academy.cs.cmu.edu/sharing/midnightBlueFly830313/embed"></iframe>
       <pre><code>
+#This is the function drawLogoA . This is the function that draws the first logo, which is the sun that is displayed. 
+        #This is what edits the circle, (sun) and the star, (sunback) , based on its parameters. which are the 
+        #x-coordinate, the y-coordinate, and the radius, respectively. 
+        
 def drawLogoA(x,y,radius):
     sun.centerX = x
     sun.centerY = y
@@ -123,6 +128,9 @@ def drawLogoA(x,y,radius):
     sunback.centerY = y
     sunback.radius = (radius * 3)/2
 
+#this is the first if-statement where this function is called. The parameters here are (300,300, 70) which means the sun has a radius of 70, 
+        #and is located at 300,300 on the screen
+        
 def onMouseRelease(x,y):
     app.slide=app.slide+1
     if app.slide ==7:
@@ -137,6 +145,9 @@ def onMouseRelease(x,y):
         author.value = ''
         progressbar.y2 = 114
 
+#Same thing. It is called here. The parameters are different meaning it is in a different area which here is 80,60 on the screen with a radius of 
+        #30
+        
 if app.slide==2:
         drawLogoA(80,60,30)
         drawLogoB(340,320,70)
