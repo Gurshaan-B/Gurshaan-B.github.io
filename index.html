@@ -115,17 +115,27 @@ Label('cholar',206,206, fill='white', font='arial')
         But the code is good. Conecpts we learned were how to use functions and variables, and how to change properties.</p>
       <iframe src="https://academy.cs.cmu.edu/sharing/midnightBlueFly830313/embed"></iframe>
       <pre><code>
-Rect(0,0,400,400,fill='skyBlue')
-Rect(0,300,400,100,fill='lightGreen')
-sun = Star(120,150,20,9,roundness=90, fill='yellow')
-sunback = Star(120,150,30,9,roundness=10, fill='yellow')
 def drawLogoA(x,y,radius):
-  sun.centerX = x
-  sun.centerY = y
-  sun.radius = radius
-  sunback.centerX = x
-  sunback.centerY = y
-  sunback.radius = (radius * 3)/2
+    sun.centerX = x
+    sun.centerY = y
+    sun.radius = radius
+    sunback.centerX = x
+    sunback.centerY = y
+    sunback.radius = (radius * 3)/2
+
+def onMouseRelease(x,y):
+    app.slide=app.slide+1
+    if app.slide ==7:
+        app.slide=0
+    if app.slide==1:
+        drawLogoA(300,300,70)
+        drawLogoB(75,308,30)
+        problemNumber.value = 'Problem 1'
+        cause.value = 'Deforestation is happening too quickly and as a '
+        effect.value = 'result, the worlds forests are getting smaller'
+        title.value = ''
+        author.value = ''
+        progressbar.y2 = 114
       </code></pre>
     </div>
 
