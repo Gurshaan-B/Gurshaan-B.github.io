@@ -174,10 +174,29 @@ if app.slide==2:
     <div class="project-card">
       <h3 class="project-title">Goal 12 Quiz</h3>
       <p class="project-description">This quiz contains 6 basic questions which you answer. They are distributed across two pages. I learned how to use 
-      hit and contain statements.</p>
+      hit and contain statements.In the code exerpt below, that is when you click on the answers. The Option 1 and 2 are the two different options
+      which have if statements where if it is equal to the value of the Question, then you get a point, and else, you lose one. You press enter to initially 
+      start and you press the 'Next Slide' button to continue. </p>
    <iframe width="410" height="460"
    src="https://academy.cs.cmu.edu/sharing/peruMonkey272275/embed"> 
  </iframe> 
+      <pre><code>
+        
+def onMousePress(mouseX,mouseY) : 
+    if (Option1.hits(mouseX,mouseY)):
+        if (Option1Label.value == app.Question1):
+            app.score += 1
+            Option1.fill='yellow'
+            print(app.score)
+        else:
+            app.score-= 1
+    elif (Option2.hits(mouseX,mouseY)):
+        if (Option2Label.value == app.Question1):
+            app.score += 1
+            Option2.fill='yellow'
+        else:
+          app.score-= 1
+      </code></pre>
     </div>
 
     <!-- Project 5 -->
