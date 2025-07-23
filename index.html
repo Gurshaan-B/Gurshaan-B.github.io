@@ -90,7 +90,7 @@
   <section class="projects-grid">
     <!-- Project 1 -->
     <div class="project-card">
-      <h3 class="project-title">Global Goals Splashscreen</h3>
+      <h3 class="project-title">Project 1</h3>
       <p class="project-description">These drawings represent four global goals I believe are most important out of the 17. The squares each represent a goal, and the logo is centered. I learned shape creation, layering, and color fills.</p>
       <iframe src="https://academy.cs.cmu.edu/sharing/ivoryFly916554/embed"></iframe>
       <pre><code>
@@ -201,11 +201,27 @@ def onMousePress(mouseX,mouseY) :
 
     <!-- Project 5 -->
     <div class="project-card">
-      <h3 class="United Nations Goal 12 Quiz">Project 5</h3>
-      <p class="project-description">  </p>
+      <h3 class="Project 5">Project 5</h3>
+      <p class="This is a game where you find the food that has been scattered throughout the screen. We learned how to group items and some other concepts that we had went over that we never used. 
+        You press enter to start and then, you move the mouse to find it. This code is what happens when a food is found. The score count increases, and the conditionals are for the new location
+        of the food. ">  </p>
       <iframe width="410" height="460"
    src="https://academy.cs.cmu.edu/sharing/chartreuseBee884272/embed"> 
  </iframe> > 
+    <pre><code> 
+      scoreCounter = Label (app.score,300,20,fill = 'white')  
+scoreDisplay = Label ('Packages collected (out of 8):',210,20,fill='white')
+def onMousePress(mouseX,mouseY):
+    scoreCounter.toFront()
+    scoreDisplay.toFront()
+    if app.gameStarted == True and circleFinder.contains(app.spritePosX, app.spritePosY):
+        print('hit')
+        hideSprite(spriteGroup)
+        if app.spritePosX == 100:
+            changeValue(388,333)
+        elif app.spritePosX == 388:
+            changeValue(65,329)
+    </code></pre>
  
     </div>
 
