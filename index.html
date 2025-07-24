@@ -228,10 +228,67 @@ def onMousePress(mouseX,mouseY):
     <!-- Project 6 -->
     <div class="project-card">
       <h3 class="project-title">Project 6</h3>
-      <p class="project-description">Description of your sixth project.</p>
+      <p class="project-description">This is our sixth and final project. Here, there is a statistics page which alternates between three different statistics about the UN gloabal goals #12. Some concepts I learned was managing what is 
+      and isn't needed, how much is too much, and how to put together all of the concepts. There are two games. One which is mine, and the other is my partners'. I will describe my game here. Basically, what you do in it is that there 
+      is a t-shirt that falls from the sky and you click on it to make it disappear representing usage of goods. I couldn't get the win and lose parts in but there is a timer and a score tracker.I also learned how to use onStep functions
+        and random. Overall, this was good enough and while it doesn't meet my personal vision, it is still good enough for this portfolio. </p>
       <iframe width="410" height="460"
    src="https://academy.cs.cmu.edu/sharing/grayTiger127490/embed"> 
  </iframe> 
+      <pre><code> 
+        def onMousePress(mouseX,mouseY):
+    if app.gameId == 0:
+        if (ButtonOne.hits(mouseX,mouseY)==True) :
+            statisticsPage()
+            statisticsImage()
+        if (ButtonTwo.hits(mouseX,mouseY)==True) :
+            app.gameId = 1
+            gameOne()
+        if (ButtonThree.hits(mouseX,mouseY)==True):
+            app.gameId = 2
+            gameTwo()
+    elif app.gameId == 1:
+        pass
+    elif app.gameId == 2:
+        gameTwoMousePress(mouseX, mouseY)
+        if app.counter < 400 and shirtGroup.visible == False :
+            explainFive.value = 'You Lost'
+            explainFive.size = 20
+            explainFive.fill = 'Red'
+
+      #the custom function that was called in that above function.
+
+          def gameTwoMousePress (mouseX,mouseY):
+    def gameTwoMousePress (mouseX,mouseY):
+    if shirtGroup.hits(mouseX,mouseY) == True:
+            if shirtGroup.dx == 0:
+                if shirtGroup.opacity - 5 > 0:
+                    shirtGroup.opacity -= 5
+                    app.gameTwoScore += 5
+                    shirtGroup.centerY += 5
+                else:
+                    shirtGroup.visible = False
+                    app.gameTwoScore += 10
+                    gameTwoNextRound()
+            else:
+                shirtGroup.dx=0
+                app.gameTwoScore += 5
+  
+    app.game2round += 1
+    
+        
+    gameTwoScore.value = 'Score: ' + str(app.gameTwoScore)
+
+          #the onStep
+    def onStep():
+    if app.gameId == 1:
+        createTrash.centerY -= 1
+    if app.gameId == 2:
+        Game2score.visible = True
+        shirtGroup.centerY += shirtGroup.dx
+        app.counter+=1
+        Game2score.value = app.counter
+      
     </div>
   </section>
 </body>
